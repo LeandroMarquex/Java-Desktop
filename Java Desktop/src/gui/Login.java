@@ -11,6 +11,7 @@ import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
@@ -66,6 +67,11 @@ public class Login extends JFrame implements ActionListener{
 		// TODO Auto-generated method stub
 		if (e.getSource() == logar) {
 			System.out.println("LOGOU ");
+			
+			String s = "Login: " + login.getText() 
+				    + "\n Senha: " + new String(senha.getPassword());
+			JOptionPane.showConfirmDialog(null, s);
+			
 		} else if(e.getSource() == cancelar){
 			
 			login.setText("");
