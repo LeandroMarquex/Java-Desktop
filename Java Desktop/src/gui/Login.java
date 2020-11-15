@@ -5,6 +5,8 @@ package gui;
 
 import java.awt.Container;
 import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -16,12 +18,18 @@ import javax.swing.JTextField;
  * @author Leandro Marques
  *
  */
-public class Login extends JFrame{
+public class Login extends JFrame implements ActionListener{
 
 	JButton logar, cancelar;
 	
 	public Login() {
 		super("Login");
+		
+		logar = new JButton("Logar");
+		logar.addActionListener(this);
+		
+		cancelar = new JButton("Cancelar");
+		cancelar.addActionListener(this);
 		
 		Container c = getContentPane();
 		c.setLayout(new GridLayout(3, 2));
@@ -29,8 +37,8 @@ public class Login extends JFrame{
 		c.add(new JTextField());
 		c.add(new JLabel("Senha:"));
 		c.add(new JPasswordField());
-		c.add(new JButton("Logar:"));
-		c.add(new JButton("Cancelar:"));
+		c.add(logar);
+		c.add(cancelar);
 		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setSize(300, 300);
@@ -44,6 +52,18 @@ public class Login extends JFrame{
 		// TODO Auto-generated method stub
 		
 		new Login();
+	}
+
+	
+	public void actionPerformed(ActionEvent e) {
+		// TODO Auto-generated method stub
+		if (e.getSource() == logar) {
+			System.out.println("LOGOU ");
+		} else {
+			
+			System.out.println("CANCELOU");
+		}
+		;
 	}
 
 }
