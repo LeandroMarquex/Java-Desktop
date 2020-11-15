@@ -61,6 +61,8 @@ public class Eventos extends JFrame implements ActionListener{
 		botao.setText("Foi Clicado");
 		System.out.println("Clicou................");
 		
+		System.out.println();
+		
 	}
 	
 	public static void main(String[] args) {
