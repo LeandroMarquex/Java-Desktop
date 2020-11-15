@@ -3,8 +3,10 @@
  */
 package gui;
 
+import java.awt.Color;
 import java.awt.Container;
 import java.awt.FlowLayout;
+import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -29,10 +31,16 @@ public class Eventos extends JFrame implements ActionListener{
 		JLabel simples = new JLabel("Label Teste");
 		simples.setToolTipText("Meu label");
 		
+		Font fonte = new Font("serif", Font.BOLD | Font.ITALIC, 28);
 		Container c = getContentPane();
 		c.setLayout(new FlowLayout());
 		c.add(simples);
 		
+		
+		JLabel lcor = new JLabel("Label Teste 2");
+		lcor.setFont(fonte);
+		lcor.setForeground(Color.BLUE);
+		c.add(lcor);
 
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setSize(300, 300);
