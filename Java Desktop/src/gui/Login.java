@@ -19,7 +19,9 @@ import javax.swing.JTextField;
  *
  */
 public class Login extends JFrame implements ActionListener{
-
+	
+	JTextField login;
+	JPasswordField senha;
 	JButton logar, cancelar;
 	
 	public Login() {
@@ -31,10 +33,15 @@ public class Login extends JFrame implements ActionListener{
 		cancelar = new JButton("Cancelar");
 		cancelar.addActionListener(this);
 		
+		login = new JTextField();
+		senha = new JPasswordField();
+		
 		Container c = getContentPane();
 		c.setLayout(new GridLayout(3, 2));
+		//c.add(login);
 		c.add(new JLabel("Login:"));
 		c.add(new JTextField());
+		//c.add(senha);
 		c.add(new JLabel("Senha:"));
 		c.add(new JPasswordField());
 		c.add(logar);
@@ -59,8 +66,10 @@ public class Login extends JFrame implements ActionListener{
 		// TODO Auto-generated method stub
 		if (e.getSource() == logar) {
 			System.out.println("LOGOU ");
-		} else {
+		} else if(e.getSource() == cancelar){
 			
+			login.setText("");
+			senha.setText("");
 			System.out.println("CANCELOU");
 		}
 		;
